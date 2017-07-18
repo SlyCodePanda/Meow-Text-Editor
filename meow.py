@@ -1,7 +1,10 @@
+'''
+Icons made by "www.freepik.com" from "http://www.flaticon.com" 
+www.flaticon.com is licensed by "http://creativecommons.org/licenses/by/3.0/" 
+Creative Commons BY 3.0.
+'''
 import sys
 from PyQt4 import QtCore, QtGui, uic
-
-
 
 # Window inherits from the Qt widget 'MainWindow'
 class Window(QtGui.QMainWindow):
@@ -16,6 +19,7 @@ class Window(QtGui.QMainWindow):
         # Starting point: 50, 50. And 500 pixels wide, 300 pixels tall.
         self.ui.setGeometry(50, 50, 500, 300)
         self.ui.setWindowTitle("Meow Text")
+        self.ui.setWindowIcon(QtGui.QIcon('cat-black.png'))
 
 
         # Open.
