@@ -11,20 +11,17 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Meow Text</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="2">
-     <widget class="QTextBrowser" name="textBrowser"/>
-    </item>
     <item row="0" column="1">
      <widget class="QLabel" name="meow_label">
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
-       <string>Meow Text Editor v.01</string>
+       <string>Meow Text v.01</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -33,6 +30,9 @@
        <bool>false</bool>
       </property>
      </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QTextEdit" name="textEdit"/>
     </item>
    </layout>
   </widget>
@@ -53,7 +53,7 @@
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="separator"/>
-    <addaction name="actionExit"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -82,9 +82,9 @@
     <string>Save</string>
    </property>
   </action>
-  <action name="actionExit">
+  <action name="actionQuit">
    <property name="text">
-    <string>Exit</string>
+    <string>Quit</string>
    </property>
   </action>
   <action name="actionCopy">
