@@ -37,6 +37,9 @@ class Window(QtGui.QMainWindow):
         self.ui.actionQuit.setStatusTip('Quit Application')
         self.ui.actionQuit.triggered.connect(self.close_application)
 
+        # Preferences.
+        self.ui.actionPreferences.triggered.connect(self.open_prefs)
+
         
         self.home()
 
@@ -44,6 +47,15 @@ class Window(QtGui.QMainWindow):
     def home(self):
         self.ui.show()
         #self.show()
+
+
+    def open_prefs(self):
+        print('Opening preferences window...')
+        self.w = MyPrefs()
+        self.w.setGeometry(100, 100, 400, 200)
+        self.w.setWindowTitle("Preferences")
+        self.w.setWindowIcon(QtGui.QIcon('cat-black.png'))
+        self.w.show()
 
 
     def editor(self):
@@ -84,6 +96,32 @@ class Window(QtGui.QMainWindow):
             sys.exit()
         else:
             pass
+
+
+
+# Prefrences Pop-Up Window.
+class MyPrefs(QtGui.QWidget):
+    def __init__(self):
+        QtGui.QWidget.__init__(self)
+        self.main = Window()
+
+        self.prefs()
+
+
+    def prefs(self):
+        btn = QtGui.QPushButton("Font", self)
+        # What happens when the button is clicked.
+        btn.clicked.connect(self.font_choice)
+        btn.resize(btn.minimumSizeHint())
+        btn.move(0,100)
+
+        self.show()
+
+
+    def font_choice(self):
+        font, valid = QtGui.QFontDialog.getFont()
+        if valid:
+            self.main.ui.textEdit.setFont(font)    
 
 
 # Our 'main'.
